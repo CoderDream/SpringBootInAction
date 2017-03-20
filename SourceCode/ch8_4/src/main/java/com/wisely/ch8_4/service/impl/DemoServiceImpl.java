@@ -17,8 +17,8 @@ public class DemoServiceImpl implements DemoService {
 	public Person savePersonWithRollBack(Person person){
 		Person p =personRepository.save(person);
 
-		if(person.getName().equals("汪云飞")){
-			throw new IllegalArgumentException("汪云飞已存在，数据将回滚"); //3
+		if(person.getName().equals("姹簯椋�")){
+			throw new IllegalArgumentException("姹簯椋炲凡瀛樺湪锛屾暟鎹皢鍥炴粴"); //3
 		}
 		return p;
 	}
@@ -27,8 +27,8 @@ public class DemoServiceImpl implements DemoService {
 	public Person savePersonWithoutRollBack(Person person){
 		Person p =personRepository.save(person);
 		
-		if(person.getName().equals("汪云飞")){
-			throw new IllegalArgumentException("汪云飞虽已存在，数据将不会回滚");
+		if(person.getName().equals("姹簯椋�")){
+			throw new IllegalArgumentException("姹簯椋炶櫧宸插瓨鍦紝鏁版嵁灏嗕笉浼氬洖婊�");
 		}
 		return p;
 	}

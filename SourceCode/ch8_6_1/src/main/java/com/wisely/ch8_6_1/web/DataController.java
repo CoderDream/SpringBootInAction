@@ -22,10 +22,10 @@ public class DataController {
 	public Person save(){
 		Person  p = new Person("wyf",32);
 		Collection<Location> locations =  new LinkedHashSet<Location>();
-		Location loc1 = new Location("上海","2009");
-		Location loc2 = new Location("合肥","2010");
-		Location loc3 = new Location("广州","2011");
-		Location loc4 = new Location("马鞍山","2012");
+		Location loc1 = new Location("涓婃捣","2009");
+		Location loc2 = new Location("鍚堣偉","2010");
+		Location loc3 = new Location("骞垮窞","2011");
+		Location loc4 = new Location("椹瀺灞�","2012");
 		locations.add(loc1);
 		locations.add(loc2);
 		locations.add(loc3);

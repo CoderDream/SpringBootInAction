@@ -58,7 +58,7 @@ public class Ch94Application {
 	public IntegrationFlow releasesFlow() {
 		return IntegrationFlows.from(MessageChannels.queue("releasesChannel", 10)) //1
 				.<SyndEntry, String> transform(
-						payload -> "《" + payload.getTitle() + "》 " + payload.getLink() + getProperty("line.separator")) //2
+						payload -> "銆�" + payload.getTitle() + "銆� " + payload.getLink() + getProperty("line.separator")) //2
 				.handle(Files.outboundAdapter(new File("e:/springblog")) //3
 						.fileExistsMode(FileExistsMode.APPEND) //4
 						.charset("UTF-8") //5
@@ -71,7 +71,7 @@ public class Ch94Application {
 	public IntegrationFlow engineeringFlow() {
 		return IntegrationFlows.from(MessageChannels.queue("engineeringChannel", 10))
 				.<SyndEntry, String> transform(
-						payload -> "《" + payload.getTitle() + "》 " + payload.getLink() + getProperty("line.separator"))
+						payload -> "銆�" + payload.getTitle() + "銆� " + payload.getLink() + getProperty("line.separator"))
 				.handle(Files.outboundAdapter(new File("e:/springblog"))
 						.fileExistsMode(FileExistsMode.APPEND)
 						.charset("UTF-8")
@@ -84,10 +84,10 @@ public class Ch94Application {
 	public IntegrationFlow newsFlow() {
 		return IntegrationFlows.from(MessageChannels.queue("newsChannel", 10))
 				.<SyndEntry, String> transform(
-						payload -> "《" + payload.getTitle() + "》 " + payload.getLink() + getProperty("line.separator"))
+						payload -> "銆�" + payload.getTitle() + "銆� " + payload.getLink() + getProperty("line.separator"))
 				.enrichHeaders( //1
 						Mail.headers()
-						.subject("来自Spring的新闻")
+						.subject("鏉ヨ嚜Spring鐨勬柊闂�")
 						.to("wisely-man@126.com")
 						.from("wisely-man@126.com"))
 				.handle(Mail.outboundAdapter("smtp.126.com") //2

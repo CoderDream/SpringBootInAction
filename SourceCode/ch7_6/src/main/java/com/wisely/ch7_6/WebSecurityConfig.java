@@ -14,12 +14,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/","/login").permitAll()//1根路径和/login路径不拦截
+                .antMatchers("/","/login").permitAll()//1鏍硅矾寰勫拰/login璺緞涓嶆嫤鎴�
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login") //2登陆页面
-                .defaultSuccessUrl("/chat") //3登陆成功转向该页面
+                .loginPage("/login") //2鐧婚檰椤甸潰
+                .defaultSuccessUrl("/chat") //3鐧婚檰鎴愬姛杞悜璇ラ〉闈�
                 .permitAll()
                 .and()
                 .logout()
@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                 .withUser("wisely").password("wisely").roles("USER");
     }
-    //5忽略静态资源的拦截
+    //5蹇界暐闈欐�佽祫婧愮殑鎷︽埅
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/resources/static/**");

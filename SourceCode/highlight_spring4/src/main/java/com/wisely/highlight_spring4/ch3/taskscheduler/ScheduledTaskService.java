@@ -13,12 +13,12 @@ public class ScheduledTaskService {
 
 	  @Scheduled(fixedRate = 5000) //1
 	  public void reportCurrentTime() {
-	       System.out.println("Ã¿¸ôÎåÃëÖ´ĞĞÒ»´Î " + dateFormat.format(new Date()));
+	       System.out.println("æ¯éš”äº”ç§’æ‰§è¡Œä¸€æ¬¡ " + dateFormat.format(new Date()));
 	   }
 
 	  @Scheduled(cron = "0 28 11 ? * *"  ) //2
 	  public void fixTimeExecution(){
-	      System.out.println("ÔÚÖ¸¶¨Ê±¼ä " + dateFormat.format(new Date())+"Ö´ĞĞ");
+	      System.out.println("åœ¨æŒ‡å®šæ—¶é—´ " + dateFormat.format(new Date())+"æ‰§è¡Œ");
 	  }
 
 }

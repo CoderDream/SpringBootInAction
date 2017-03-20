@@ -10,14 +10,14 @@ public class CsvJobListener implements JobExecutionListener{
     @Override
     public void beforeJob(JobExecution jobExecution) {
         startTime = System.currentTimeMillis();
-        System.out.println("任务处理开始");
+        System.out.println("浠诲姟澶勭悊寮�濮�");
     }
 
     @Override
     public void afterJob(JobExecution jobExecution) {
         endTime = System.currentTimeMillis();
-        System.out.println("任务处理结束");
-        System.out.println("耗时:" + (endTime - startTime) + "ms");
+        System.out.println("浠诲姟澶勭悊缁撴潫");
+        System.out.println("鑰楁椂:" + (endTime - startTime) + "ms");
     }
 
 }

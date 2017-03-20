@@ -15,16 +15,16 @@ import com.wisely.domain.Person;
 
 @RestController
 public class DataController {
-	//1 Spring Data JPA已自动为你注册bean，所以可自动注入
+	//1 Spring Data JPA宸茶嚜鍔ㄤ负浣犳敞鍐宐ean锛屾墍浠ュ彲鑷姩娉ㄥ叆
 	@Autowired
 	PersonRepository personRepository;
 	
 	/**
-	 * 保存
-	 * save支持批量保存：<S extends T> Iterable<S> save(Iterable<S> entities);
+	 * 淇濆瓨
+	 * save鏀寔鎵归噺淇濆瓨锛�<S extends T> Iterable<S> save(Iterable<S> entities);
 	 * 
-	 * 删除：
-	 * 删除支持使用id，对象以，批量删除及删除全部：
+	 * 鍒犻櫎锛�
+	 * 鍒犻櫎鏀寔浣跨敤id锛屽璞′互锛屾壒閲忓垹闄ゅ強鍒犻櫎鍏ㄩ儴锛�
 	 * void delete(ID id);
 	 * void delete(T entity);
 	 * void delete(Iterable<? extends T> entities);
@@ -43,7 +43,7 @@ public class DataController {
 
 	
 	/**
-	 * 测试findByAddress
+	 * 娴嬭瘯findByAddress
 	 */
 	@RequestMapping("/q1")
 	public List<Person> q1(String address){
@@ -55,7 +55,7 @@ public class DataController {
 	}
 	
 	/**
-	 * 测试findByNameAndAddress
+	 * 娴嬭瘯findByNameAndAddress
 	 */
 	@RequestMapping("/q2")
 	public Person q2(String name,String address){
@@ -67,7 +67,7 @@ public class DataController {
 	}
 	
 	/**
-	 * 测试withNameAndAddressQuery
+	 * 娴嬭瘯withNameAndAddressQuery
 	 */
 	@RequestMapping("/q3")
 	public Person q3(String name,String address){
@@ -79,7 +79,7 @@ public class DataController {
 	}
 	
 	/**
-	 * 测试withNameAndAddressNamedQuery
+	 * 娴嬭瘯withNameAndAddressNamedQuery
 	 */
 	@RequestMapping("/q4")
 	public Person q4(String name,String address){
@@ -91,7 +91,7 @@ public class DataController {
 	}
 	
 	/**
-	 * 测试排序
+	 * 娴嬭瘯鎺掑簭
 	 */
 	@RequestMapping("/sort")
 	public List<Person> sort(){
@@ -103,7 +103,7 @@ public class DataController {
 	}
 	
 	/**
-	 * 测试分页
+	 * 娴嬭瘯鍒嗛〉
 	 */
 	@RequestMapping("/page")
 	public Page<Person> page(){

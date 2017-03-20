@@ -63,8 +63,8 @@ public class Ch104ApplicationTests {
 		int status = result.getResponse().getStatus(); //7
 		String content = result.getResponse().getContentAsString(); //8
 		
-		Assert.assertEquals("错误，正确的返回值为200",200, status); //9
-		Assert.assertEquals("错误，返回值和预期返回值不一致", expectedJson,content); //10
+		Assert.assertEquals("閿欒锛屾纭殑杩斿洖鍊间负200",200, status); //9
+		Assert.assertEquals("閿欒锛岃繑鍥炲�煎拰棰勬湡杩斿洖鍊间笉涓�鑷�", expectedJson,content); //10
 	}
 
 }

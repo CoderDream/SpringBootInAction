@@ -25,6 +25,6 @@ public class Ch935Application implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		 rabbitTemplate.convertAndSend("my-queue", "来自RabbitMQ的问候"); //3
+		 rabbitTemplate.convertAndSend("my-queue", "鏉ヨ嚜RabbitMQ鐨勯棶鍊�"); //3
 	}
 }

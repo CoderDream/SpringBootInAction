@@ -22,7 +22,7 @@ import com.wisely.highlight_springmvc4.interceptor.DemoInterceptor;
 import com.wisely.highlight_springmvc4.messageconverter.MyMessageConverter;
 
 @Configuration
-@EnableWebMvc// 1
+@EnableWebMvc // 1
 @EnableScheduling
 @ComponentScan("com.wisely.highlight_springmvc4")
 public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
@@ -39,8 +39,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
-		registry.addResourceHandler("/assets/**").addResourceLocations(
-				"classpath:/assets/");// 3
+		registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/assets/");// 3
 
 	}
 
@@ -64,10 +63,10 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 		registry.addViewController("/async").setViewName("/async");
 	}
 
-	 @Override
-	 public void configurePathMatch(PathMatchConfigurer configurer) {
-	 configurer.setUseSuffixPatternMatch(false);
-	 }
+	@Override
+	public void configurePathMatch(PathMatchConfigurer configurer) {
+		configurer.setUseSuffixPatternMatch(false);
+	}
 
 	@Bean
 	public MultipartResolver multipartResolver() {
@@ -75,17 +74,15 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 		multipartResolver.setMaxUploadSize(1000000);
 		return multipartResolver;
 	}
-	
+
 	@Override
-    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(converter());
-    }
-	
-	@Bean 
-	public MyMessageConverter converter(){
-		return new MyMessageConverter();
+	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+		converters.add(converter());
 	}
 
-	
+	@Bean
+	public MyMessageConverter converter() {
+		return new MyMessageConverter();
+	}
 
 }

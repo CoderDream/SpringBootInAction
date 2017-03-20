@@ -6,7 +6,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @ComponentScan("com.wisely.highlight_spring4.ch1.aop")
-@EnableAspectJAutoProxy //1
+@EnableAspectJAutoProxy
+// 1
 public class AopConfig {
 
 }

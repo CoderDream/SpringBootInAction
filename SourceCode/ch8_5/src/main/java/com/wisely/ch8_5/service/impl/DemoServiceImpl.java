@@ -21,22 +21,22 @@ public class DemoServiceImpl implements DemoService {
 	@CachePut(value = "people", key = "#person.id")
 	public Person save(Person person) {
 		Person p = personRepository.save(person);
-		System.out.println("为id、key为:"+p.getId()+"数据做了缓存");
+		System.out.println("涓篿d銆乲ey涓�:"+p.getId()+"鏁版嵁鍋氫簡缂撳瓨");
 		return p;
 	}
 
 	@Override
 	@CacheEvict(value = "people")//2
 	public void remove(Long id) {
-		System.out.println("删除了id、key为"+id+"的数据缓存");
-		//这里不做实际删除操作
+		System.out.println("鍒犻櫎浜唅d銆乲ey涓�"+id+"鐨勬暟鎹紦瀛�");
+		//杩欓噷涓嶅仛瀹為檯鍒犻櫎鎿嶄綔
 	}
 
 	@Override
 	@Cacheable(value = "people", key = "#person.id")//3
 	public Person findOne(Person person) {
 		Person p = personRepository.findOne(person.getId());
-		System.out.println("为id、key为:"+p.getId()+"数据做了缓存");
+		System.out.println("涓篿d銆乲ey涓�:"+p.getId()+"鏁版嵁鍋氫簡缂撳瓨");
 		return p;
 	}
 

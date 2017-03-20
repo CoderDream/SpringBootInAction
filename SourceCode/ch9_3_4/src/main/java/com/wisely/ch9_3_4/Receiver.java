@@ -8,7 +8,7 @@ public class Receiver {
 
 	@JmsListener(destination = "my-destination") //1
 	public void receiveMessage(String message) {
-		System.out.println("接受到: <" + message + ">");
+		System.out.println("鎺ュ彈鍒�: <" + message + ">");
 	}
 
 }
