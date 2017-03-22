@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wisely</groupId>
-	<artifactId>ch5_2_3</artifactId>
+	<artifactId>ch5_2_6</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>ch5_2_3</name>
+	<name>ch5_2_6</name>
 	<description>Spring Boot Setup Demo</description>
 
 	<parent>
