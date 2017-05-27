@@ -32,15 +32,13 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setPrefix("/WEB-INF/classes/views/");
 		viewResolver.setSuffix(".jsp");
-		viewResolver.setViewClass(JstlView.class);
+		viewResolver.setViewClass(JstlView.class);		
 		return viewResolver;
 	}
-
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
 		registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/assets/");// 3
-
 	}
 
 	@Bean

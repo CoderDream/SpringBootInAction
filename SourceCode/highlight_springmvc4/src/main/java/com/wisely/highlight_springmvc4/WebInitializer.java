@@ -20,6 +20,7 @@ public class WebInitializer implements WebApplicationInitializer {// 1
 		servlet.addMapping("/");
 		servlet.setLoadOnStartup(1);
 		servlet.setAsyncSupported(true);// 1
+//		servlet.set
 	}
 
 }
